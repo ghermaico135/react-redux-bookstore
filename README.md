@@ -32,18 +32,18 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-- **HTML**
+- **JSX**
 - **CSS**
-  **react-vite**
-- **linters **
+- **react-vite**
+- **linters**
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
 - **Using Linters**
-- **objects for dynamic manipulation**
--
+- **using react-vite and react hooks**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -66,20 +66,20 @@ Install [Node Js](https://nodejs.org/en) and [NPM](https://docs.npmjs.com/cli/v6
 pin your commandline (if your are on windows ) or Terminal (if you are on Mac or Linux) and paste this command:
 
 ```sh
-git clone https://github.com/ghermaico135/webpack-todo.git
+git clone https://github.com/ghermaico135/react-redux-bookstore.git
 ```
 
-then you will see the **webpack-todo** on your system then type this:
+then you will see the **react-redux-bookstore** on your system then type this:
 
 ```sh
-cd webpack-todo
+cd react-bookstore
 ```
 
 Now you successfully installed it.
 
 ### Usage
 
-Inside **webpack-todo** you can install the node and run npm start open it inside your browser.
+Inside npm install you can install the node and run npm start open it inside your browser.
 
 ### Run tests
 
@@ -107,7 +107,7 @@ You can deploy this project using [Netlify](https://www.netlify.com/) or [Github
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Adding , removing ,editing and interactive clearing form list dynamically**
+- **Design book , remove button**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,7 +117,7 @@ You can deploy this project using [Netlify](https://www.netlify.com/) or [Github
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page] (https://github.com/ghermaico135/webpack-todo/issues).
+Feel free to check the [issues page] (https://github.com/ghermaico135/react-redux-bookstore/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
