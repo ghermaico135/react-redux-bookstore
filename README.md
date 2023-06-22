@@ -1,9 +1,9 @@
-# webpack-todo# <!-- @format -->
+# react-bookstore# <!-- @format -->
 # 📗 Table of Contents
 
-- [webpack-todo# ](#webpack-todo-)
+- [react-bookstore# ](#react-bookstore-)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \["webpack Todo-list project of Microverse\] ](#-webpack-todo-list-project-of-microverse-)
+- [📖 \["react-bookstore project of Microverse\] ](#-react-bookstore-project-of-microverse-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -22,11 +22,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 ["webpack Todo-list project of Microverse] <a name="about-project"></a>
+# 📖 ["react-bookstore project of Microverse] <a name="about-project"></a>
 
 > This project is about displaying todo list from array object
 
-**[webpack Todo-list project of Microverse]** is a great project for beginners to learn how to build a simple use objects
+**[react-bookstore project of Microverse]** is a great project for beginners to learn how to build a simple use objects
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -34,8 +34,7 @@
 
 - **HTML**
 - **CSS**
-- **JS**
-- **webpack**
+  **react-vite**
 - **linters **
 
 <!-- Features -->
