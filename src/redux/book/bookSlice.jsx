@@ -12,8 +12,8 @@ const bookSlice = createSlice({
   name:"books",
   initialState,
   reducers :{
-    addBook : () =>{
-   
+    addBook : (state) =>{
+      return  Object.assign({}, state, {bookStore:[...state.bookStore, {id:1,title:"BloodLine", author:"herriye"}]})
     },
 
     removeBook : (state,action) =>{
