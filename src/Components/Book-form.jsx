@@ -1,28 +1,20 @@
-
-import {useState} from "react"
-
+import { useDispatch } from "react-redux"
 import style from "@/Components/styles/form.module.css"
-
+import {addBook} from "../redux/book/bookSlice"
 
 function BookForm() {
-  const [book ,setBooks] = useState('')
-
-  const handleChange = (e) => {
-    setBooks(e.target.value)
-  }
-
-
-
+  const dispatch = useDispatch()
+  
   return (
     <div className={style["form-container"]}>
       <h1>ADD NEW BOOK</h1>
       <form className={style.form}>
-     <input className={style.input} type="text" placeholder="Add book" value={book} onChange={handleChange} />
+     <input className={style.input} type="text" placeholder="Add book" value="books"  />
      <select className={style.categories} name="Categories" >
       <option value="">Fiction</option>
       <option value="">Programming</option>
      </select>
-     <button className={style.submitBtn} type="Submit" value="Submit">ADD BOOK</button>
+     <button className={style.submitBtn} type="Submit" value="Submit" onClick={() => dispatch(addBook())}>ADD BOOK</button>
      </form>
     </div>
   )
