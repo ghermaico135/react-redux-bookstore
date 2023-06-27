@@ -1,13 +1,15 @@
 
 import Navbar from "./Navbar"
-import BookStoreLogics from "@/Components/BooStoreLogics"
+import BookList from "./Book-list"
+import BookForm from "./Book-form"
 
 function Books() {
 
   return (
     <>
     <Navbar />
-    <BookStoreLogics />
+    <BookList />
+    <BookForm />
     </>
   )
 }

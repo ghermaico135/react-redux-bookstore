@@ -36,13 +36,14 @@
 - **CSS**
 - **react-vite**
 - **linters**
+- **redux-toolkit**
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
 - **Using Linters**
-- **using react-vite and react hooks**
+- **using react-vite and react hooks and react-redux-hook**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
