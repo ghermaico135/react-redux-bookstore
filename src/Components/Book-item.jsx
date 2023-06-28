@@ -3,8 +3,11 @@ import style from '@/Components/styles/bookItem.module.css';
 import { removeBook } from '../redux/book/bookSlice';
 import { useDispatch } from 'react-redux';
 
+
 function BookItem({ id, title, author }) {
   const dispatch = useDispatch();
+
+  
 
   return (
     <div className={style['bookItem-container']}>
