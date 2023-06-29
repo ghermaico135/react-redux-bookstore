@@ -7,8 +7,6 @@ import { useDispatch } from 'react-redux';
 function BookItem({ id, title, author }) {
   const dispatch = useDispatch();
 
-  
-
   return (
     <div className={style['bookItem-container']}>
       <li className={style.bookItem}>

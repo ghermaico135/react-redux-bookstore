@@ -34,8 +34,9 @@ export const fetchBooks = createAsyncThunk("books/fetchBooks",
           category
         }
     });
+    return bookData
   }catch(error){
-    return thunkAPI.rejectWithValue("something went wrong with posting Item");
+    return thunkAPI.rejectWithValue("Something went wrong with posting the item.");
   }
  })
 
@@ -45,7 +46,7 @@ export const fetchBooks = createAsyncThunk("books/fetchBooks",
     axios.delete(`${baseUrl}${uniqueBookId}/books/${Item_id}`)
     return Item_id
   }catch(error){
-    return thunkAPI.rejectWithValue("something went wrong with deleting");
+    return thunkAPI.rejectWithValue("Something went wrong with deleting the item.");
   }
  })
 
@@ -65,7 +66,7 @@ const bookSlice = createSlice({
 		}),
 			builder.addCase(fetchBooks.fulfilled, (state, action) => {
 				state.bookStore = action.payload;
-        // console.log(state.bookStore)
+        console.log(state.bookStore)
 				state.isLoading = false;
 			}),
 			builder.addCase(fetchBooks.rejected, (state, action) => {
@@ -73,11 +74,11 @@ const bookSlice = createSlice({
 				state.error = "something went wrong";
 			}),
       builder.addCase(addBooks.fulfilled, (state, action) => {
-				state.bookStore.push(action.payload);
-				
-			}),
+        const newBook = action.payload;
+        state.bookStore = [...state.bookStore, newBook];
+      }),
       builder.addCase(removeBooks.fulfilled, (state, action) => {
-        state.bookStore = state.bookStore.filter((book) => book.item_id !== action.payload)
+        state.bookStore = state.bookStore.filter((book) => book.item_id !== action.payload);
 			})
     }
 })
