@@ -1,0 +1,78 @@
+:root{
+  --white :#fff;
+  --light-blue: #0290ff;
+  --light-grey: #f5f6fa;
+  --light-black:#121212;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:var(--light-grey);
+  width: 91rem;
+  min-height: 89.625rem;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+
+.navbar-container {
+  width: 87.5rem;
+  height: 5.938rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  background-color:var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border:4px solid red;
+}
+
+.nav-items{
+  border: 4px solid green;
+  display: flex;
+  align-self: center;
+  list-style-type: none;
+  margin: 4px 8px;
+  width: 60%;
+}
+
+.BookStore-cms {
+  color: var(--light-blue);
+  margin: 4px 8px;
+  padding: 8px;
+  width: 15rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+ 
+}
+
+.links{
+  width: 3.688rem;
+  height: 1rem;
+  margin: 1.125rem 2.563rem 0.688rem 0;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: var(--light-black);
+  text-decoration: none;
+}
+
+.links:hover {
+  color:var(--light-blue);
+} 
+
+.links:active {
+  color: red;
+} 
+
+.userName{
+  border: 4px solid blue;
+}
+

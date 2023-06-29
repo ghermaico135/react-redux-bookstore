@@ -1,21 +1,26 @@
 import { Link } from 'react-router-dom';
-import style from '@/Components/styles/Navbar.module.css'
+import '../Components/styles/Navbar.css'
 
 
 function Navbar() {
   return (
-    <nav className={style["navbar-container"]}>
-      <ul className={style["nav-items"]}>
-      <h1 className={style.heading}>
-        <Link className={style.links} to="/">BookStore CMS</Link>
+    <nav className="navbar-container">
+      <h1 className="BookStore-cms">
+            BookStore CMS
       </h1>
-        <li className={style["link-item"]}>
-          <Link className={style.links} to="/">BOOKS</Link>
-        </li>
-        <li className={style["link-item"]}>
-          <Link className={style.links} to="/categories"> CATEGORIES</Link>
-        </li>
-      </ul>
+        <ul className="nav-items">
+          
+            <li className="link-item">
+              <Link className="links" to="/">BOOKS</Link>
+            </li>
+            <li className="link-item">
+              <Link className="links" to="/categories"> CATEGORIES</Link>
+            </li>
+        </ul>
+        <div className="userName">
+        <img width="40" height="40" src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="user-male-circle"/>
+        </div>
+   
     </nav>
   );
 }
