@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import style from "@/Components/styles/form.module.css"
-import {addBook} from "../redux/book/bookSlice"
+import {addBooks} from "../redux/book/bookSlice"
 import { useState } from "react"
 
 
@@ -10,7 +10,8 @@ function BookForm() {
 
   const [details, setDetails] = useState({
     title:"",
-    author:""
+    author:"",
+    category:""
   })
 
   const handleChange = (e) =>{
@@ -26,7 +27,7 @@ function BookForm() {
   const handleSubmit = (e) =>{
     e.preventDefault()
     let item_id = Math.floor(Math.random() * 1000)
-    dispatch(addBook({
+    dispatch(addBooks({
       id:`item_${item_id}`,
       ...details
     }))

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import style from '@/Components/styles/bookItem.module.css';
-import { removeBook } from '../redux/book/bookSlice';
+import { removeBooks } from '../redux/book/bookSlice';
 import { useDispatch } from 'react-redux';
 
 
@@ -13,7 +13,7 @@ function BookItem({ id, title, author }) {
     <div className={style['bookItem-container']}>
       <li className={style.bookItem}>
         <h1>{title} {author}</h1>
-        <button className={style.removeBtn} onClick={()=> dispatch(removeBook({ id }))}>Remove</button>
+        <button className={style.removeBtn} onClick={()=> dispatch(removeBooks({ id }))}>Remove</button>
       </li>
     </div>
   );

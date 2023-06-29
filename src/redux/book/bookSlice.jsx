@@ -1,19 +1,54 @@
 import {createAsyncThunk,createSlice} from "@reduxjs/toolkit"
 import axios from "axios"
 
-const uniqueBookId ="jBPPSDYk5Iy5vRYCcMjK"
+
+
+
 const baseUrl =`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/`
+const uniqueBookId ="UmB0SO4lefpRCF5XLhcV"
 
 
 export const fetchBooks = createAsyncThunk("books/fetchBooks",
  async (name,thunkAPI) =>{
   try{
-    const response = await axios.get(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${uniqueBookId}/books`)
+    const response = await axios.get(`${baseUrl}${uniqueBookId}/books`)
+    // console.log(response.data)
     return response.data
   } catch(error){
     return thunkAPI.rejectWithValue("something went wrong");
   }
  })
+
+ export const addBooks = createAsyncThunk("books/addBook",
+ async (bookData,thunkAPI) =>{
+  try{
+    const {item_id,title,author,category} = bookData
+    await axios({
+      method: 'post',
+      url: `${baseUrl}${uniqueBookId}/books`,
+      data: 
+        {
+          item_id,
+          title,
+          author,
+          category
+        }
+    });
+  }catch(error){
+    return thunkAPI.rejectWithValue("something went wrong with posting Item");
+  }
+ })
+
+ export const removeBooks = createAsyncThunk("books/removeBook",
+ async (Item_id,thunkAPI) =>{
+  try{
+    axios.delete(`${baseUrl}${uniqueBookId}/books/${Item_id}`)
+    return Item_id
+  }catch(error){
+    return thunkAPI.rejectWithValue("something went wrong with deleting");
+  }
+ })
+
 
  const initialState = {
 	bookStore: [],
@@ -24,57 +59,29 @@ export const fetchBooks = createAsyncThunk("books/fetchBooks",
 const bookSlice = createSlice({
   name:"books",
   initialState,
-  reducers :{
-
-    addBook : async (state,action) =>{
-
-      try{
-        const {item_id,title,author,category} = action.payload
-        await axios({
-          method: 'post',
-          url: baseUrl,
-          data: 
-            {
-              item_id,
-              title,
-              author,
-              category
-            }
-        });
-      }catch(error){
-        return thunkAPI.rejectWithValue("something went wrong with posting Item");
-      }
-    
-      // state.push({item_id,title,author,category})
-    },
-    removeBook : (state,action) =>{
-      try{
-        const {item_id} = action.payload
-        axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${uniqueBookId}/books/${item_id}`)
-      }catch(error){
-        return thunkAPI.rejectWithValue("something went wrong with deleting");
-      }
-      
-
-      // return state.filter((book) => book.item_id !== id)
-      
-    }
-  },
   extraReducers: (builder) => {
 		builder.addCase(fetchBooks.pending, (state, action) => {
 			state.isLoading = true;
 		}),
 			builder.addCase(fetchBooks.fulfilled, (state, action) => {
-				state.users = action.payload;
+				state.bookStore = action.payload;
+        // console.log(state.bookStore)
 				state.isLoading = false;
 			}),
 			builder.addCase(fetchBooks.rejected, (state, action) => {
 				state.isLoading = false;
 				state.error = "something went wrong";
-			});
-	},
+			}),
+      builder.addCase(addBooks.fulfilled, (state, action) => {
+				state.bookStore.push(action.payload);
+				
+			}),
+      builder.addCase(removeBooks.fulfilled, (state, action) => {
+        state.bookStore = state.bookStore.filter((book) => book.item_id !== action.payload)
+			})
+    }
 })
 
 
-export const {addBook, removeBook} = bookSlice.actions;
+export const { actions } = bookSlice;
 export default bookSlice.reducer;
