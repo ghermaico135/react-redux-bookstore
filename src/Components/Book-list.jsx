@@ -33,9 +33,10 @@ function BookList() {
       </div>
     );
   } else {
-    const bookData = Object.values(bookStore)[0];
-   
+    const bookData = Object.values(bookStore);
+
     return (
+<<<<<<< HEAD
       <div>{
         bookData.map((book) =>(
             <ul  key={book.item_id}>
@@ -48,6 +49,20 @@ function BookList() {
         }
         
       </div>
+=======
+      <div>
+    {bookData.map((book) => (
+      <ul key={book.item_id}>
+        <BookItem
+          id={book.item_id}
+          title={book.title}
+          author={book.author}
+          category={book.category}
+        />
+      </ul>
+    ))}
+  </div>
+>>>>>>> development
     );
   }
 }

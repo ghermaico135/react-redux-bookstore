@@ -31,7 +31,7 @@ function BookForm() {
       item_id: `item_${item_id}`,
       title: details.title,
       author: details.author,
-      category: details.category
+      category:"programming"
     }))
     setDetails('')
   }

@@ -5,10 +5,11 @@ import { useDispatch } from 'react-redux';
 import progressBarImg from "../Components/images/progressBar.png"
 
 
-function BookItem({ id, title, author }) {
+function BookItem({id, title, author}) {
   const dispatch = useDispatch();
 
   return (
+<<<<<<< HEAD
     <div className="bookItem-container">
       <li className="bookItem">
         <div className="detail-container">
@@ -37,6 +38,12 @@ function BookItem({ id, title, author }) {
         </div>
          
         
+=======
+    <div className={style['bookItem-container']}>
+      <li className={style.bookItem}>
+        <h1>{title} {author}</h1>
+        <button className={style.removeBtn} onClick={()=> dispatch(removeBooks(id))}>Remove</button>
+>>>>>>> development
       </li>
       
     </div>
@@ -47,6 +54,7 @@ BookItem.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   author: PropTypes.string,
+  category:PropTypes.string
 };
 
 export default BookItem;
