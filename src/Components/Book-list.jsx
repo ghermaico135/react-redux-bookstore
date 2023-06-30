@@ -36,20 +36,6 @@ function BookList() {
     const bookData = Object.values(bookStore);
 
     return (
-<<<<<<< HEAD
-      <div>{
-        bookData.map((book) =>(
-            <ul  key={book.item_id}>
-            <BookItem
-              id={book.item_id}
-              {...book}
-            />
-          </ul>
-        ))
-        }
-        
-      </div>
-=======
       <div>
     {bookData.map((book) => (
       <ul key={book.item_id}>
@@ -62,7 +48,6 @@ function BookList() {
       </ul>
     ))}
   </div>
->>>>>>> development
     );
   }
 }

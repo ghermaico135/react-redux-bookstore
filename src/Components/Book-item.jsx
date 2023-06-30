@@ -9,7 +9,6 @@ function BookItem({id, title, author}) {
   const dispatch = useDispatch();
 
   return (
-<<<<<<< HEAD
     <div className="bookItem-container">
       <li className="bookItem">
         <div className="detail-container">
@@ -18,7 +17,7 @@ function BookItem({id, title, author}) {
             <p className="book-author">{author}</p>
             <div className="Item-modifyBtn">
                 <button className="Btn">Comments |</button>
-                <button className="Btn" onClick={()=> dispatch(removeBooks({ id }))}>Remove |</button>
+                <button className="Btn" onClick={()=> dispatch(removeBooks(id))}>Remove |</button>
                 <button className="Btn">Edit</button>
             </div>
         </div>
@@ -36,14 +35,6 @@ function BookItem({id, title, author}) {
             <button className="Btn-update" onClick={()=> dispatch()}>UPDATE PROGRESS</button>
           </div>
         </div>
-         
-        
-=======
-    <div className={style['bookItem-container']}>
-      <li className={style.bookItem}>
-        <h1>{title} {author}</h1>
-        <button className={style.removeBtn} onClick={()=> dispatch(removeBooks(id))}>Remove</button>
->>>>>>> development
       </li>
       
     </div>
