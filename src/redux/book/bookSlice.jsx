@@ -61,9 +61,6 @@ const bookSlice = createSlice({
   initialState,
   reducer:{},
   extraReducers: (builder) => { 
-    builder.addCase(fetchBooks.pending, (state) => {
-			state.isLoading = true;
-		}),
     builder.addCase(fetchBooks.fulfilled, (state, action) => {
       const bookItems = Object.keys(action.payload)
       state.bookStore =[]
@@ -77,22 +74,11 @@ const bookSlice = createSlice({
         })
       })
       state.isLoading = false;
-    }),
-    builder.addCase(fetchBooks.rejected, (state) => {
-				state.isLoading = false;
-				state.error = "something went wrong";
-			}),
-      builder.addCase(addBooks.fulfilled, (state, action) => {
-        state.bookStore = action.payload;
-
-      }),
-      builder.addCase(removeBooks.fulfilled, (state, action) => {
-        state.bookStore = action.payload;
-			})
+    })
 
   }
-
 })
+
 
 export const { actions} = bookSlice.actions;
 export default bookSlice.reducer;
