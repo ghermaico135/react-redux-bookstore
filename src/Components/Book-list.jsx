@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import BookItem from "./Book-item";
+// import PropTypes from 'prop-types';
+import BookItem from "./Book-item"
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks } from "../redux/book/bookSlice";
 import { useEffect } from "react";
@@ -53,7 +53,7 @@ function BookList() {
 }
 
 
-BookList.propTypes = {
-  item_id: PropTypes.number.isRequired
-};
+// BookList.propTypes = {
+//   item_id: PropTypes.number.isRequired
+// };
 export default BookList;

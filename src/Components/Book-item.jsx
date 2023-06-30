@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import "../Components/styles/bookItem.css"
 import { removeBooks } from '../redux/book/bookSlice';
 import { useDispatch } from 'react-redux';
-import progressBarImg from "../Components/images/progressBar.png"
+import CircularProgressBar from "./ProgressBar"
 
 
 function BookItem({id, title, author}) {
   const dispatch = useDispatch();
-
+const progress=90;
   return (
     <div className="bookItem-container">
       <li className="bookItem">
@@ -23,7 +23,8 @@ function BookItem({id, title, author}) {
         </div>
         <div className="book-stat-container">
         <div className="item-stat">
-              <img className="progressBar" src={progressBarImg} alt="progressBarImg" />
+              
+              <CircularProgressBar progress={progress} />
               <div className="stat-details">
                 <h1 className="stat-percentage">90%</h1>
                 <h6 className="stat-completed">completed</h6>
