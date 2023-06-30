@@ -5,11 +5,13 @@ import '../Components/styles/Navbar.css'
 function Navbar() {
   return (
     <nav className="navbar-container">
-      <h1 className="BookStore-cms">
-            BookStore CMS
-      </h1>
+    
         <ul className="nav-items">
-          
+        <li className="">
+        <Link className="bookStore" to="/"> 
+        <p className="BookStore-cms">BookStore CMS</p></Link>
+           
+      </li>
             <li className="link-item">
               <Link className="links" to="/">BOOKS</Link>
             </li>

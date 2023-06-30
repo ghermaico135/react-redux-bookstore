@@ -27,7 +27,7 @@ body {
 
 .form-container {
   min-height: 20vh;
-  width: 83%;
+  width: 60%;
   margin: 2rem auto;
   padding: 8px;
 }
@@ -35,7 +35,7 @@ body {
 .add-book {
   width: 10.875rem;
   height: 1.5rem;
-  margin: 1.813rem 32.75rem 1.188rem 0;
+  margin-left: 6rem;
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: -0.18px;
@@ -45,16 +45,18 @@ body {
 .add-form {
   display: flex;
   padding: 4px;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
+  width: 17rem;
 }
 
 .input {
-  width: 41.5rem;
+  width: 15rem;
   height: 2.813rem;
   margin: 1rem 2.125rem 0 0;
   padding: 0.2rem 35.688rem 0.813rem 0.5rem;
@@ -92,4 +94,30 @@ body {
   font-size: 0.813rem;
   letter-spacing: 0.5px;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    width: 80%;
+    margin: 2rem auto;
+  }
+
+  .add-form {
+    width: 80%;
+  }
+
+  .add-book {
+    margin-left: 8rem;
+  }
+
+  .inputContainer {
+    width: 20rem;
+  }
+
+  .input {
+    width: 20rem;
+    height: 2rem;
+    margin: 0.5rem 1.125rem 0 0;
+    padding: 0.2rem 3rem 0.813rem 0.5rem;
+  }
 }
