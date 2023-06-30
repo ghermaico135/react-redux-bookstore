@@ -44,6 +44,7 @@
 
 - **Using Linters**
 - **using react-vite and react hooks and react-redux-hook**
+- **Adding and removing books from API**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

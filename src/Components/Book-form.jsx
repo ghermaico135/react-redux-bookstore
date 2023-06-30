@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
 import style from "@/Components/styles/form.module.css"
-import {addBook} from "../redux/book/bookSlice"
+import {addBooks} from "../redux/book/bookSlice"
 import { useState } from "react"
 
 
@@ -10,7 +10,8 @@ function BookForm() {
 
   const [details, setDetails] = useState({
     title:"",
-    author:""
+    author:"",
+    category:""
   })
 
   const handleChange = (e) =>{
@@ -26,23 +27,25 @@ function BookForm() {
   const handleSubmit = (e) =>{
     e.preventDefault()
     let item_id = Math.floor(Math.random() * 1000)
-    dispatch(addBook({
-      id:`item_${item_id}`,
-      ...details
+    dispatch(addBooks({
+      item_id: `item_${item_id}`,
+      title: details.title,
+      author: details.author,
+      category:"programming"
     }))
     setDetails('')
   }
-  
+
   return (
     <div className={style["form-container"]}>
       <h1>ADD NEW BOOK</h1>
       <form className={style.form} onSubmit={handleSubmit}>
         <div className={style.inputContainer}>
             <div>
-            <input name="title" className={style.input} type="text"  value={details.title} placeholder="Add book" onChange={handleChange} />
+            <input name="title" className={style.input} type="text"  value={details.title || ""} placeholder="Add book" onChange={handleChange} />
             </div>
             <div>
-            <input name="author" className={style.input} type="text" value={details.author} placeholder="Add author"  onChange={handleChange}  />
+            <input name="author" className={style.input} type="text" value={details.author || "" } placeholder="Add author"  onChange={handleChange}  />
             </div>
         </div>
         <div className={style.selectContainer}>
