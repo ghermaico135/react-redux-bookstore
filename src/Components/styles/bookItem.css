@@ -12,9 +12,9 @@
 
 body {
   background-color: var(--light-grey);
-  min-width: 91rem;
+  width: 91rem;
   min-height: 89.625rem;
-  font-family: RobotoSlab;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -25,6 +25,7 @@ body {
 }
 
 .bookItem-container {
+  width: 70rem;
   height: 10.625rem;
   margin: 2.313rem 6.25rem 0;
   padding: 4px;
@@ -87,9 +88,14 @@ body {
 }
 
 .item-stat {
-  border: 4px solid red;
   display: flex;
+  align-items: center;
   width: 15rem;
+}
+
+.progressBar {
+  width: 80px;
+  height: 80px;
 }
 
 .stat-details {
@@ -119,7 +125,7 @@ body {
 }
 
 .current-chapter {
-  width: 7.875rem;
+  width: 10rem;
   height: 1.125rem;
   font-weight: 300;
   opacity: 0.5;
@@ -128,7 +134,7 @@ body {
 }
 
 .chapter-number {
-  width: 4.688rem;
+  width: 6rem;
   height: 1.313rem;
   margin: 0.438rem 6.813rem 0.25rem 3.688rem;
   font-size: 1rem;

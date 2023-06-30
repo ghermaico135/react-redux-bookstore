@@ -61,7 +61,7 @@ const bookSlice = createSlice({
   name:"books",
   initialState,
   extraReducers: (builder) => {
-		builder.addCase(fetchBooks.pending, (state, action) => {
+		builder.addCase(fetchBooks.pending, (state) => {
 			state.isLoading = true;
 		}),
 			builder.addCase(fetchBooks.fulfilled, (state, action) => {
@@ -69,7 +69,7 @@ const bookSlice = createSlice({
         console.log(state.bookStore)
 				state.isLoading = false;
 			}),
-			builder.addCase(fetchBooks.rejected, (state, action) => {
+			builder.addCase(fetchBooks.rejected, (state) => {
 				state.isLoading = false;
 				state.error = "something went wrong";
 			}),

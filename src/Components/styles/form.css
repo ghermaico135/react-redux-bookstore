@@ -16,7 +16,7 @@ body {
   background-color: var(--light-grey);
   min-width: 91rem;
   min-height: 89.625rem;
-  font-family: RobotoSlab;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
