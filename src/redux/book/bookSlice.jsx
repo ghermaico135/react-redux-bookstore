@@ -74,8 +74,12 @@ const bookSlice = createSlice({
 				state.error = "something went wrong";
 			}),
       builder.addCase(addBooks.fulfilled, (state, action) => {
-        const newBook = action.payload;
-        state.bookStore = [...state.bookStore, newBook];
+        for(let newBook in action.payload){
+          state.bookStore.push(newBook);
+        }
+        state.bookStore = [...state.bookStore];
+        // const newBook = action.payload;
+        // state.bookStore = [...state.bookStore, newBook];
       }),
       builder.addCase(removeBooks.fulfilled, (state, action) => {
         state.bookStore = state.bookStore.filter((book) => book.item_id !== action.payload);
