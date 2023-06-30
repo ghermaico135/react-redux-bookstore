@@ -38,9 +38,8 @@ function BookList() {
     return (
       <div>{
         bookData.map((book) =>(
-            <ul>
+            <ul  key={book.item_id}>
             <BookItem
-              key={book.item_id}
               id={book.item_id}
               {...book}
             />
