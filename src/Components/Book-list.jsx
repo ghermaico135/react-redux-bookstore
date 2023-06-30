@@ -11,7 +11,7 @@ function BookList() {
 
   useEffect(() => {
     dispatch(fetchBooks());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return (
@@ -32,22 +32,21 @@ function BookList() {
       </div>
     );
   } else {
-    const bookData = Object.values(bookStore)[0];
-   
+    const bookData = Object.values(bookStore);
+
     return (
-      <div>{
-        bookData.map((book) =>(
-            <ul>
-            <BookItem
-              key={book.item_id}
-              id={book.item_id}
-              {...book}
-            />
-          </ul>
-        ))
-        }
-        
-      </div>
+      <div>
+    {bookData.map((book) => (
+      <ul key={book.item_id}>
+        <BookItem
+          id={book.item_id}
+          title={book.title}
+          author={book.author}
+          category={book.category}
+        />
+      </ul>
+    ))}
+  </div>
     );
   }
 }
