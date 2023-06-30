@@ -11,10 +11,11 @@ function BookItem({ id, title, author }) {
     <div className="bookItem-container">
       <li className="bookItem">
         <div class="detail-container">
-            <h1 className="title">{title} </h1>
-            <h4>{author}</h4>
+          <p className="detail-action">Actions</p>
+            <p className="book-title">{title} </p>
+            <p className="book-author">{author}</p>
             <div className="Item-modifyBtn">
-                <button className="Btn">Comments|</button>
+                <button className="Btn">Comments |</button>
                 <button className="Btn" onClick={()=> dispatch(removeBooks({ id }))}>Remove |</button>
                 <button className="Btn">Edit</button>
             </div>
@@ -23,14 +24,14 @@ function BookItem({ id, title, author }) {
         <div className="item-stat">
               <img src="" alt="image" />
               <div className="stat-details">
-                <h1>64%</h1>
-                <h6>completed</h6>
+                <h1 className="stat-percentage">64%</h1>
+                <h6 className="stat-completed">completed</h6>
               </div>
           </div>
           <div className="bookCategory">
-            <h4>Current chapter</h4>
-            <h3>Chapter 17</h3>
-            <button className="Btn" onClick={()=> dispatch(removeBooks({ id }))}>Remove</button>
+            <h4 className="current-chapter">CURRENT CHAPTER</h4>
+            <h3 className="chapter-number">Chapter 17</h3>
+            <button className="Btn-update" onClick={()=> dispatch(removeBooks({ id }))}>UPDATE PROGRESS</button>
           </div>
         </div>
          

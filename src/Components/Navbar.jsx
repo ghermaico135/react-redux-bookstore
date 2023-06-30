@@ -18,7 +18,7 @@ function Navbar() {
             </li>
         </ul>
         <div className="userName">
-        <img width="40" height="40" src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="user-male-circle"/>
+        <img className="userName-icon" src="https://img.icons8.com/ios-filled/50/user-male-circle.png" alt="user-male-circle"/>
         </div>
    
     </nav>
